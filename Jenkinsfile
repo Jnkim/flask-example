@@ -36,7 +36,7 @@ node {
     }
     // 테스트가 통과되면 이미지 업로드 수행 
     stage('Push image') {
-         docker.withRegistry('https://192.168.200.99:443', 'harbor_cred') {
+         docker.withRegistry('https://yourdomain.com', 'harbor_cred') {
              app.push("${env.BUILD_NUMBER}")
              app.push("latest")
          }
